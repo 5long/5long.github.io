@@ -1,0 +1,10 @@
+{% capture href %}
+  {% if page.url == '/index.html' %}
+    {{ site.baseurl }}
+  {% else  %}
+    {{ page.url }}
+  {% endif %}
+{% endcapture %}
+
+<h1><a rel="self" href="{{ href }}">{{ page.title }}</a></h1>
+<hr />

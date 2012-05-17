@@ -1,0 +1,20 @@
+---
+layout: bare
+---
+
+<small>{{ page.date | date:"%B %d, %Y" }}</small>
+{{ content }}
+
+<ul class="pager">
+  {% if page.previous %}
+    <li class="prev">
+      <a rel="prev" href="{{ page.previous.url }} ">&larr; {{ page.previous.title }}</a>
+    </li>
+  {% endif %}
+
+  {% if page.next %}
+    <li class="next">
+      <a rel="next" href="{{ page.next.url }} ">{{ page.next.title }} &rarr;</a>
+    </li>
+  {% endif %}
+</ul>

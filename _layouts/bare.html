@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% if page.title != site.name %}
+      {{ page.title }} | {{ site.name }}
+    {% else %}
+      {{ site.name }}
+    {% endif %}</title>
+  <link rel="alternate" title="{{ site.name }}" href="/atom.xml"
+    type="application/atom+xml" />
+</head>
+<body>
+  {% include header.html %}
+  {{content}}
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+name: Random Bugs
+
+auto: true
+server: true
+permalink: /post/:title.html
+
+baseurl: /
+
+pygments: true
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
