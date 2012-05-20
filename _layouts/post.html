@@ -2,8 +2,10 @@
 layout: site
 ---
 
-<small>{{ page.date | date:"%B %d, %Y" }}</small>
-{{ content }}
+<div class="article">
+  <small>{{ page.date | date:"%B %d, %Y" }}</small>
+  {{ content }}
+</div>
 
 <ul class="pager">
   {% if page.previous %}
