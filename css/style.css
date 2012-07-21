@@ -3,9 +3,9 @@
 }
 
 :target {
-  -o-animation: grey-highlight 1s 0.05s 1;
-  -moz-animation: grey-highlight 1s 0.05s 1;
-  -webkit-animation: grey-highlight 1s 0.05s 1;
+  -o-animation: grey-highlight 0.55s 0.05s 1;
+  -moz-animation: grey-highlight 0.55s 0.05s 1;
+  -webkit-animation: grey-highlight 0.55s 0.05s 1;
   background-color: #eee;
 }
 
