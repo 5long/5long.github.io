@@ -15,7 +15,7 @@ title: "Getting Serious"
 具体手段包括但不限于吐槽, 看 AV, 写更有意思的代码, 酗酒等等.
 不然就等着若干年之后严重 burnout 然后转行吧.
 
-### 树倒在森林里
+## 树倒在森林里
 {: #tree-falls-in-forest}
 
 大概去年这个时候我去某电商大厂面试,
@@ -39,12 +39,12 @@ Anyhow, 其实这个故事教育我们:
 所有人依然会欢心鼓舞地等待发布.
 大不了在几个星期之后被愤怒的用户发现再修正就是了.
 
-### 滥用文化
+## 滥用文化
 {: #abusing-culture}
 
 文化是能救人的.
 
-#### Blameless
+### Blameless
 
 [无问责的 post-mortem analysis][esty blameless] 是好事吧.
 但是这篇博客太长了,
@@ -61,7 +61,7 @@ Anyhow, 其实这个故事教育我们:
 灰头土脸地去修 bug 的人都不一定是你.
 *Awesome*.
 
-#### Facebook is cool. We're cool, too
+### Facebook is cool. We're cool, too
 {: #break-things-move-fast}
 
 还记得 Facebook 有句格言叫做 Move fast and break things 么,
@@ -81,7 +81,7 @@ Anyhow, 其实这个故事教育我们:
 但是, 但是, 这些不利的细节才没有心情去了解呢.
 有那句口号打掩护就够了.
 
-### 主动技能
+## 主动技能
 {: #active-skills}
 
 修复 bug 的能力就像[被动技能][cold mastery],

@@ -5,7 +5,7 @@ title: "SPDY 一瞥"
 ---
 稍微看了一下 SPDY 协议的工作方式。随手记一点罢。
 
-### 原则
+## 原则
 
 SPDY 的设计主要为了解决以下问题：
 
@@ -15,12 +15,12 @@ SPDY 的设计主要为了解决以下问题：
 * TCP 的慢开始机制限制了传输效率，多个 TCP 连接并发传输尤甚。
 * 合并 CSS/JS 虽然可以减少 HTTP 请求次数，但不可避免地带来更多维护成本，而且丧失了细粒度的缓存控制能力。而且现代 WebApp 在初始化时发起的多个 Ajax 请求无法被合并。
 
-### Multiplexing
+## Multiplexing
 
 这应该是 SPDY 带来的最大改进：允许在单个 TCP 连接上异步且交错地返回多个 HTTP
 响应。一并解决了连接开销，慢开始和利用率低的问题。
 
-### Server Push & Server Hint
+## Server Push & Server Hint
 
 在实现了 Multiplexing
 的基础上，服务器端可以主动向客户端推送内容而不是等客户端主动发起请求。可以在客户端发现所需的外部资源之前就开始并发传输，这就是所谓
@@ -43,7 +43,7 @@ lazy load 一遍并通过设定 cookie
 我个人觉得更合适的 Server Push 应用是把动态的数据也提前推下去。如果 WebApp
 采用客户端渲染，这一机制可以有效减少初始加载时间[^content-loaded]，也不必在服务器端把初始化数据组合成单个响应。当数据来自于多个响应时间变化显著的服务时这点尤其重要。
 
-### Header 压缩
+## Header 压缩
 
 旧的 Web 性能优化方案中，有很重要的一条是把静态资源放在无 cookie
 域名下从而减少传输浪费。而这似乎与 SPDY 的单一 TCP
@@ -51,7 +51,7 @@ lazy load 一遍并通过设定 cookie
 server 分别发起一个 SPDY session。SPDY 针对这一问题的正面解决方案则是提供
 HTTP 头部的压缩。于是我们也可以利用 cookie 做防盗链了么？
 
-### Final Thoughts[^final-thoughts]
+## Final Thoughts[^final-thoughts]
 
 假使现代浏览器都能很快发布实现 SPDY 协议的版本，使得开发者开始考虑实现 SPDY
 的实际收益，现今最大的问题还是在于服务器端的跟进实现和旧有 WebApp
