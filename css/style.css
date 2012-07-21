@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fcfcfc;
+  color: #222;
+  font: 16px/1.5 Helvetica, "DejaVu Sans", Arial
+    , "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.125;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+a:hover,
+a:focus {
+  color: #000;
+}
+
+.article {
+  max-width: 45em;
+}
