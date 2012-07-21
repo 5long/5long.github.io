@@ -2,6 +2,43 @@
   box-sizing: border-box;
 }
 
+:target {
+  -o-animation: grey-highlight 1s 0.05s 1;
+  -moz-animation: grey-highlight 1s 0.05s 1;
+  -webkit-animation: grey-highlight 1s 0.05s 1;
+  background-color: #eee;
+}
+
+@-o-keyframes grey-highlight {
+  0% {
+    background-color: #666;
+  }
+
+  100% {
+    background-color: #eee;
+  }
+}
+
+@-moz-keyframes grey-highlight {
+  0% {
+    background-color: #666;
+  }
+
+  100% {
+    background-color: #eee;
+  }
+}
+
+@-webkit-keyframes grey-highlight {
+  0% {
+    background-color: #666;
+  }
+
+  100% {
+    background-color: #eee;
+  }
+}
+
 body {
   background-color: #fcfcfc;
   color: #222;
