@@ -3,8 +3,15 @@ layout: site
 title: Random Bugs
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<p>Rant, sarcasm and/or programming.</p>
+
+<p>但这里写的都是中文(yet)。</p>
+
+{% for post in site.posts %}
+  {% if forloop.first %}
+    <p>
+      Latest post:
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </p>
+  {% endif %}
+{% endfor %}
