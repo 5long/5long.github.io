@@ -1,8 +1,8 @@
 {% capture href %}
-  {% if page.url == '/index.html' %}
-    {{ site.baseurl }}
-  {% else  %}
+  {% if page.date %}
     {{ page.url }}
+  {% else  %}
+    {{ site.baseurl }}
   {% endif %}
 {% endcapture %}
 
