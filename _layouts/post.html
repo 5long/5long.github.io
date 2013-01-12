@@ -5,7 +5,9 @@ layout: site
 <div class="article">
   <small>{{ page.date | date:"%B %d, %Y" }}</small>
   {{ content }}
+  {% include disqus.html %}
 </div>
+
 
 <ul class="pager">
   {% if page.previous %}

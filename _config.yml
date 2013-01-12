@@ -4,6 +4,8 @@ auto: true
 server: true
 permalink: /post/:title.html
 
+disqus_shortname: randombugs
+
 baseurl: /
 
 pygments: true
