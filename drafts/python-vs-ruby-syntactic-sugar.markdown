@@ -1,16 +1,9 @@
 ---
 layout: post
-title: "Python VS Ruby"
+title: "Python VS Ruby: Syntactic Sugar"
 ---
-身在一个 Python shop，
-无法不怀念 Ruby 的种种优越。
 
-考虑到现在两个语言都各自发展到了相对平稳的时期
--- Python 不会出官方2.8版，
-Ruby 即使发布 2.0 也不会有很大改动
--- 但愿我这次能一劳永逸地完成两种语言的个人偏见下的对比。
-尽管这种吐槽并不能带来什么建设性成果，
-一时口舌之快而已。
+## Implicit `self
 
 ## Type Less
 
@@ -33,24 +26,6 @@ Tuple 可以省略括号，但习惯上还是显式地写好括号，
 虽然现代编辑器/IDE可以用 snippet 等功能帮你快速打字，
 但阅读代码时视觉上的信噪比还是逃不掉的。
 少打字的编程语言总是有市场。[^end]
-
-## 对象系统
-
-Python 定义属性 getter/setter 时要写很多 boilerplate，
-而 Ruby 实现了一个纯粹的 Smalltalk 式的消息传递，
-用语法糖来提供 getter/setter。
-
-Python 还有两套 MRO 并存，
-`super()` 用起来也是打字超多。
-另外这个我完全无法理解：
-
-    o = object()
-    o.foo = 42 # 会抛 AttributeError
-
-    class C(object): pass
-    C().foo = 42 # 不抛异常。与其超类行为大不一样
-
-Python 的对象系统总给我感觉是个 afterthought。
 
 ## Code Block
 
@@ -81,20 +56,6 @@ Ruby 的 `case-when` 语句可以不必写类似 C 的 `break`，
 属于不需要的时候无所谓，
 需要的时候才会想起来的东西。
 
-## Bonus：别喊口号
-
-仅仅因为语言包含了一个 `import this` 的彩蛋，
-不代表这门语言一定适合自己。
-好比任何人都可以在简历上写“热爱技术”几个字。
-喊口号毕竟不需要成本。
-
-## 就这些
-
-其实这并不会影响我使用 supervisor 等 standalone 的 python 工具，
-但如果我可以不受限制地选取下一个 webapp 的技术栈，
-必然是 Ruby > Python.
-
 [^end]: Ruby 经常要打 `end` 这种事我会到处说嘛。
 
 [python switch case]: http://code.activestate.com/recipes/410692/
-[Bundler]: http://gembundler.com/
