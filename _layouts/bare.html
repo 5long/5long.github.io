@@ -11,6 +11,9 @@
   <link rel="alternate" title="{{ site.name }}" href="/atom.xml"
     type="application/atom+xml" />
   <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  {% if page.date %}
+    <link href="/css/syntax.css" rel="stylesheet" type="text/css" />
+  {% endif %}
   <meta name="viewport" content="width=device-width" />
 </head>
 <body>
