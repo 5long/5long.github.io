@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Random Bugs</title>
+  <link href="http://randombu.gs/atom.xml" rel="self"/>
+  <link href="http://randombu.gs/"/>
+  <updated>2013-01-16T22:47:13+08:00</updated>
+  <id>http://randombu.gs/</id>
+  <author>
+    <name>Whyme Lyu</name>
+    <email>callme5long@gmail.com</email>
+  </author>
+
+  <entry>
+    <title>Atom Feed URL 变更</title>
+    <link href="http://randombu.gs/"/>
+    <updated>2013-01-16T22:47:13+08:00</updated>
+    <id>http://randombu.gs/post/that-does-it</id>
+    <content type="html">如果你还在订阅这个 Feed，很是抱歉，请更换至
+&lt;a href=&quot;http://randombu.gs/atom.xml&quot;&gt;http://randombu.gs/atom.xml&lt;/a&gt;
+</content>
+  </entry>
+</feed>
