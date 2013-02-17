@@ -99,6 +99,10 @@ Python 这边就容易得多，
 读写控制要由 property descritpor 来实现，
 为了自定义一个只读 descritpor 写起来像这样：
 
+EDIT: 明显下面的代码是不对的，
+当时我在想什么。
+还好真实世界中一般都用下划线方案而不是用这种方案来满足语义纯化论者。
+
 {% highlight python %}
 class Foo(object):
     bar = property()
