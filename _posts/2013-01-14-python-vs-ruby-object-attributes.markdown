@@ -95,9 +95,9 @@ Python 这边就容易得多，
 至于 Python，
 只需 getter 时还好说，
 直接用 `@property` 装饰器就好。
-但许奥允许外部只读访问属性时就有些麻烦。
-读写控制要由 property descritpor 来实现，
-为了自定义一个只读 descritpor 写起来像这样：
+但需要允许外部只读访问属性时就有些麻烦。
+读写控制要由 property descriptor 来实现，
+为了自定义一个只读 descriptor 写起来像这样：
 
 EDIT: 明显下面的代码是不对的，
 当时我在想什么。
