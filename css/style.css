@@ -77,4 +77,13 @@ a:focus {
 
 .article {
   max-width: 35em;
+  margin-bottom: 2em;
+}
+
+#nav {
+  margin-top: 2em;
+}
+
+#disqus_thread {
+  margin-top: 2em;
 }
