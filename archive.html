@@ -1,10 +1,26 @@
 ---
 layout: site
 title: All Posts
+cn_posts_num: 13
 ---
 
 <ul>
   {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% if forloop.rindex > page.cn_posts_num %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<p>
+  I've given up writing technical blog in Chinese. Old posts are archived
+  here anyway:
+</p>
+
+<ul>
+  {% for post in site.posts %}
+    {% if forloop.rindex <= page.cn_posts_num %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
