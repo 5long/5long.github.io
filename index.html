@@ -5,11 +5,9 @@ title: Random Bugs
 
 <p>I do webapp development by day and rant by night.</p>
 
-{% for post in site.posts %}
-  {% if forloop.first %}
-    <p>
-      Latest blog post:
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </p>
-  {% endif %}
+{% for post in site.posts limit:1 %}
+  <p>
+    Latest blog post:
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </p>
 {% endfor %}
