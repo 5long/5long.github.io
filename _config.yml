@@ -6,7 +6,7 @@ disqus_shortname: randombugs
 
 baseurl: /
 
-pygments: true
+highghter: rogue
 markdown: kramdown
 
 exclude:
