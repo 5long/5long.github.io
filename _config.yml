@@ -16,3 +16,11 @@ exclude:
   - CNAME
   - README.markdown
   - drafts
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
