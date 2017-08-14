@@ -8,7 +8,6 @@ disqus_shortname: randombugs
 
 baseurl: /
 
-highghter: rogue
 markdown: kramdown
 
 exclude:
