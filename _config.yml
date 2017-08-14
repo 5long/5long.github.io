@@ -1,12 +1,15 @@
 name: Random Bugs
 
+domain: 5long.github.io
+addr: https://5long.github.io
+baseurl: /
+
 timezone: Asia/Shanghai
 
 permalink: /post/:title.html
 
 disqus_shortname: randombugs
 
-baseurl: /
 
 markdown: kramdown
 
