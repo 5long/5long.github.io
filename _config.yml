@@ -1,5 +1,7 @@
 name: Random Bugs
 
+timezone: Asia/Shanghai
+
 permalink: /post/:title.html
 
 disqus_shortname: randombugs
