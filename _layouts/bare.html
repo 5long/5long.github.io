@@ -17,21 +17,6 @@
   {% endif %}
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content="{{ site.description }}">
-
-  {% if page.og %}
-    <meta property="og:type" content="{{ page.og.type }}">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:url" content="{{ site.addr }}{{ page.url }}">
-    <meta property="og:sitename" content="{{ site.name }}">
-
-    {% if page.og.author %}
-      <meta property="og:article.author.first_name" content="{{ page.og.author.first_name }}">
-      <meta property="og:article.author.last_name" content="{{ page.og.author.last_name }}">
-      <meta property="og:article.author.username" content="{{ page.og.author.username }}">
-    {% endif %}
-
-  {% endif %}
-
 </head>
 <body>
   {{content}}
