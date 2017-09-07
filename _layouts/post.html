@@ -2,11 +2,21 @@
 layout: site
 ---
 
-<div class="article">
-  <small>{{ page.date | date:"%B %d, %Y" }}</small>
-  {{ content }}
-  {% include disqus.html %}
-</div>
+<article class="article">
+  <aside class="meta">
+    <small class="published_date">
+      {{ page.date | date:"%B %d, %Y" }}
+    </small>
+  </aside>
+
+  <section class="content">
+    {{ content }}
+  </section>
+
+  <footer class="discussion">
+    {% include disqus.html %}
+  </footer>
+</article>
 
 
 <ul class="pager">
