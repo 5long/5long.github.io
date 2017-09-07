@@ -2,12 +2,13 @@
 <script type="text/javascript">
   var disqus_shortname = '{{ site.disqus_shortname }}';
   /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-    var d = document, s = d.createElement('script');
+  (function(d) {
+    var s = d.createElement('script');
     s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
+    s.async = true;
     (d.head || d.body).appendChild(s);
-  })();
+  })(document);
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
