@@ -28,3 +28,9 @@ defaults:
       type: posts
     values:
       layout: post
+      og:
+        type: article
+        author:
+          first_name: Whyme
+          last_name: Lyu
+          username: 5long
