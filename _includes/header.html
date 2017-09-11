@@ -1,8 +1,8 @@
 {% capture href %}
   {% if page.date %}
-    {{ page.url }}
+    {{ page.url | prepend: site.github.url }}
   {% else  %}
-    {{ site.baseurl }}
+    {{ site.github.url }}
   {% endif %}
 {% endcapture %}
 
