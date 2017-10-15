@@ -58,6 +58,17 @@ a:focus {
   margin-bottom: 2em;
 }
 
+.article .content {
+  margin-bottom: 5em;
+}
+
+.article .content::after {
+  content: "-Fin";
+  position: relative;
+  top: 2em;
+  font-family: serif;
+}
+
 #nav {
   margin-top: 2em;
 }
