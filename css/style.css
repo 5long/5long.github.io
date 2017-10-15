@@ -3,33 +3,11 @@
 }
 
 :target {
-  -o-animation: grey-highlight 0.55s 0.05s 1;
-  -moz-animation: grey-highlight 0.55s 0.05s 1;
-  -webkit-animation: grey-highlight 0.55s 0.05s 1;
+  animation: grey-highlight 0.55s 0.05s 1;
   background-color: #eee;
 }
 
-@-o-keyframes grey-highlight {
-  0% {
-    background-color: #666;
-  }
-
-  100% {
-    background-color: #eee;
-  }
-}
-
-@-moz-keyframes grey-highlight {
-  0% {
-    background-color: #666;
-  }
-
-  100% {
-    background-color: #eee;
-  }
-}
-
-@-webkit-keyframes grey-highlight {
+@keyframes grey-highlight {
   0% {
     background-color: #666;
   }
