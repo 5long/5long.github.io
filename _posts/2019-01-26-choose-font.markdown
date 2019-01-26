@@ -180,7 +180,7 @@ error: expected type, found `}`
 
 * Input Font 的设计考量：<http://input.fontbureau.com/info/>
 * [programmingfonts.org] 收录了很多写代码用的字体
-* 一些等宽字体渲染对比：<http://www.s9w.io/font_compare/>
+* 一些等宽字体渲染对比：<https://app.programmingfonts.org/>
 
 [^legible]: legible 主要指字体里的字符是否容易被人眼辨识。
     而 readable 是指文字的意思能否被人理解。
