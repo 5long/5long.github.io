@@ -1,3 +1,3 @@
-source "https://gems.ruby-china.com/"
+source "https://mirror.azure.cn/rubygems/"
 
 gem 'github-pages', group: :jekyll_plugins
