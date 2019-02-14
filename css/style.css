@@ -48,6 +48,10 @@ h3 {
   font-size: 1.5em;
 }
 
+code, tt, kbd, samp {
+  font-family: Monaco, monospace;
+}
+
 a:hover,
 a:focus {
   color: #000;
