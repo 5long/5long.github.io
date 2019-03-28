@@ -1,4 +1,6 @@
-# 无用的知识: PackageKit
+---
+title: 无用的知识：PackageKit
+---
 
 因为前阵子自己开始尝试 Distro Hoppin，
 也就额外地重视各个 Linux Distro 间的细微差异。
