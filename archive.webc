@@ -1,0 +1,11 @@
+---
+layout: common
+eleventyImport:
+  collections: ["post"]
+---
+
+<ul>
+  <li webc:for="p of collections.post.slice().reverse()">
+   <a :href="p.url" @text="p.data.title"></a>
+  </li>
+</ul>

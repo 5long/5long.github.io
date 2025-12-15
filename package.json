@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-plugin-webc": "^0.11.2"
+  }
+}

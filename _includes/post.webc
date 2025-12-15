@@ -1,0 +1,17 @@
+---
+layout: common
+---
+
+<h1 @text="title"></h1>
+<article class="pretty">
+  <template @raw="content" webc:nokeep></template>
+</article>
+
+<style webc:scoped>
+:host.pretty::after {
+  content: "-Fin";
+  position: relative;
+  top: 2em;
+  font-family: serif;
+}
+</style>
