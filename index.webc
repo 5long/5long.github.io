@@ -4,8 +4,7 @@ eleventyImport:
   collections: ["post"]
 ---
 
-<h1 @text="RB.siteName">
-</h1>
+<h1 @text="RB.siteName"></h1>
 
 <p>Keep on ranting for the passion left.</p>
 <p>Latest blog post:
