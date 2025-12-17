@@ -1,5 +1,6 @@
 import pluginWebc from "@11ty/eleventy-plugin-webc"
 import { feedPlugin } from "@11ty/eleventy-plugin-rss"
+import footnote from 'markdown-it-footnote'
 
 export default function(c) {
   const site = {
@@ -25,4 +26,6 @@ export default function(c) {
       email: "callme5long@gmail.com",
     },
   })
+
+  c.amendLibrary("md", (mdLib) => mdLib.use(footnote))
 }
