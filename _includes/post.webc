@@ -3,6 +3,7 @@ layout: common
 ---
 
 <h1 @text="title"></h1>
+<small @text="date.toISOString().slice(0, 10)"></small>
 <article class="pretty">
   <template @raw="content" webc:nokeep></template>
 </article>
