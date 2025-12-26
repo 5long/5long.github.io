@@ -14,6 +14,7 @@
     <title webc:if=title @text="title + ' - ' + RB.siteName"></title>
     <title webc:else @text="RB.siteName"></title>
 
+    <meta name="fediverse:creator" content="@5long@fosstodon.org">
   </head>
 
   <body>
@@ -27,7 +28,7 @@
           <li><a href="/atom.xml">Atom Feed</a></li>
           <li><a href="/archive">All Posts</a></li>
           <li><a href="https://github.com/5long">Github</a></li>
-          <li><a href="https://fosstodon.org/@5long">@5long@fosstodon.org</a></li>
+          <li><a rel="me" href="https://fosstodon.org/@5long">@5long@fosstodon.org</a></li>
         </ul>
       </nav>
     </footer>
