@@ -27,6 +27,7 @@
           <li><a href="/atom.xml">Atom Feed</a></li>
           <li><a href="/archive">All Posts</a></li>
           <li><a href="https://github.com/5long">Github</a></li>
+          <li><a href="https://fosstodon.org/@5long">@5long@fosstodon.org</a></li>
         </ul>
       </nav>
     </footer>
