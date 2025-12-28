@@ -1,0 +1,197 @@
+<!doctype html>
+<html color-mode="user">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mvp.css" type="text/css">
+    <link rel="stylesheet" href="/bundle/Z-pmdxEI2q.css">
+
+    <meta name="color-scheme" content="dark light">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Random Bugs: a blog in the world by @5long">
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Random Bugs">
+
+    <title>无用的知识：代码字体选择 - Random Bugs</title>
+    
+
+    <meta name="fediverse:creator" content="@5long@fosstodon.org">
+  </head>
+
+  <body>
+    <main>
+      <h1 class="wq_vi8odk">无用的知识：代码字体选择</h1>
+<small class="wq_vi8odk">2019-01-26</small>
+<article class="pretty wq_vi8odk">
+  <p>字体可以有效地影响整个界面的氛围，
+给人以“设计感”。
+如果你经常阅读 / 修改代码，
+不妨为代码挑选一款合适的字体。</p>
+<p>考虑到现代的系统与软件往往会提供足够好的默认字体设置，
+不用用户再折腾。
+再加上既有的习惯并不容易改掉，
+所以本文的知识没什么用<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。
+而且这绝不是在自嘲。</p>
+<p>TL;DR - 我自己在用的字体是 <a href="https://blog.golang.org/go-fonts">Go Mono</a>。</p>
+<h2>等宽字体 vs. 比例字体</h2>
+<p>按照绝大多数软件的默认设置，
+代码要用等宽字体来展示。
+等宽字体可以做到在垂直方向上按照列数对齐。
+因为，呃，每个字符宽度相等。
+让空白符有语义的代码（例如 Python，YAML）可能必须要有这样的对齐，
+才会比较易读。</p>
+<p>再者，
+有些<a href="https://news.ycombinator.com/item?id=8674221">代码风格</a>会希望让跨越多行的同类语法结构在垂直方向上对齐。
+如果你需要看图演示，
+<a href="https://github.com/junegunn/vim-easy-align">vim-easy-align</a> 这个 Vim 插件的 README 里面用 gif 图片演示了多个例子。
+我自己倒是对这种风格没什么兴趣。</p>
+<p>垂直对齐的另一个好处是可以在字符界面绘图。
+比如现代的编程工具（包括编译器，语法检查，测试框架等）
+需要绘制这样的输出，来指出源码可能出错的位置：</p>
+<pre><code>error: expected type, found `}`
+ --&gt; hello.rs:2:21
+  |
+2 |   println!(&quot;Yaye&quot;): }
+  |                     ^
+</code></pre>
+<p>当然，等宽字体还可以用来画 ASCII art。</p>
+<p>另有一个原因是，标点符号往往不是文字（特别是正文）的重点内容。
+比例字体里的标点符号的尺寸往往偏小。
+而在编程语言里，标点符号都在语法结构中起着重要作用，
+现代的等宽字体就会为此设计易辨识（legible，而非 readable<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>）的符号。</p>
+<p>不过话说回来，如果有某种专门为编程设计的比例字体，
+能解决标点符号的易读性问题，
+再放弃 ASCII art 等依赖垂直对齐的需求，
+倒也不是不可以用来展示代码。
+而且比例字体也有自己的优势，如：</p>
+<ul>
+<li>Kerning!</li>
+<li>为每个字符分配更合适的空间。比如粗体，斜体，大写字母都需要更多的空间。
+结合 Kerning 等功能，最终效果是视觉的美观。</li>
+<li>连续多行的相同内容，如果其中某一行有 typo，
+有可能因为宽度不同而容易被肉眼发现。</li>
+<li>给定固定的行宽度，比例字体可以比等宽字体写更多的字符（平均来说）。</li>
+</ul>
+<p>在 Reddit 上的<a href="https://www.reddit.com/r/programming/comments/2ntm41/why_he_vertically_aligns_his_code_and_why_you/cmgsoog/">这个讨论</a>里面有很多信息。
+可以肯定的是，这个世界上有人故意不用等宽字体写代码。</p>
+<h2>衬线体 vs. 非衬线体</h2>
+<p>当我因为开始学习 Web 前端开发而接触字体知识时，
+首先了解到的知识就是衬线非衬线字体的区别。
+衬线是否能改善字体的易辨识性，
+传统的意见认为衬线体更易辨识，
+只是这件事似乎并没有很可靠的理论基础 / 实验验证。</p>
+<p>但是，在为代码设计的字体里，
+很多字体没有严格遵守衬线 / 非衬线的限制，
+而是为了把 <code>ijlI1</code> 这些字符分开，
+故意把这些字符加上衬线，
+而其余字符没有衬线（很可能是为了节省成本）。
+这种 inconsistent 的设计出现在如下的流行字体：</p>
+<ul>
+<li>Apple 的 Menlo 和 SF Mono ——
+这两个字体先后是 macOS 的新默认代码字体。
+但我总觉得它们不如旧的 Monaco 更有个性。</li>
+<li>Google 的一系列字体：
+Droid Sans Mono，Roboto Mono, Cousine，Noto Sans Mono。</li>
+<li>Inconsolata</li>
+<li>Mozilla 的 Fira Mono</li>
+<li>Ubuntu Mono</li>
+</ul>
+<p>上面提到的这些缺乏个性的字体我都不喜欢。除了 Monaco。</p>
+<p>如果要求所有字符都加上衬线，
+这倒是容易保持风格一致。
+而且衬线等宽字体又非常地少见，
+个性十足，极少撞……撞字？</p>
+<h2>字号</h2>
+<p>常见的字体格式 TTF 和 OTF 都是矢量字体，
+可以按照用户指定的尺寸自由缩放。
+不用太担心字体不支持显示器的分辨率的问题。</p>
+<p>由于低分辨率下的反锯齿渲染往往会造成笔划边缘模糊，
+有些字体为这种用例内嵌了位图（bitmap）版本。
+甚至还有没有矢量的纯位图字体。
+但位图字体的问题是：要为每种尺寸手动绘制，
+制作成本太高。
+通常只有在很小的字号上使用。</p>
+<p>考虑到现在的显示器分辨率越发地高，
+再加上视网膜屏这个产品概念的诞生，
+让高端显示器的 DPI 更加地高，
+上述的问题已经很少见，
+位图字体也就很少纳入考量了。</p>
+<h2>字形比例</h2>
+<p>太胖或者太瘦的字体都不好看。
+现代字体在设计长宽比时，
+会考虑与经典字体的比例相接近 / 一致，
+这样用新字体替换旧字体时，
+更容易维持原有的排版设计。</p>
+<p><a href="https://www.marksimonson.com/fonts/view/anonymous-pro">Anonymous Pro</a> 这个字体没能被我选中，
+就是因为它和我以往惯用的等宽字体相比，
+实在是偏胖。</p>
+<p>一个特殊情况是，
+如果用户愿意牺牲易辨识性来换取每行能显示更多的字符，
+那么有可能会选择用细瘦的字体。
+但是对于阅读代码这一用途而言，
+牺牲易读性恐怕很难接受。</p>
+<h2>为编程设计的连字（Font Ligature）</h2>
+<p>这个玩意不知道是什么时候突然流行起来的。
+简单来说，可以把 <code>!=</code> 渲染成 <code>≠</code>。
+但这种连字符往往不是字体设计者会考虑到的，
+而是由第三方 patch 进去的。
+与原有字体的视觉风格不一定契合。</p>
+<p>而且，如果你要修改代码，
+例如说，把 <code>!=</code> 改成 <code>==</code>。
+如果有 <code>!</code> 这个字符作为 anchor，
+可以用搜索的方式快速把光标定位过去，
+然后在 Vim 里按 <code>r=</code> 即可。
+如果用了连字，
+等于是把一个操作符原有的字符信息在视觉上隐藏了。
+给编辑代码带来困难。</p>
+<p>所以我在选择字体时，
+不会考虑连字符这回事。
+甚至于说，有它还不如没它。</p>
+<h2>结语</h2>
+<p>字体设计还有许多要素，
+诸如，笔划粗细，支持的字符集等等。
+这里不再多谈。</p>
+<p>最终我在这里：<a href="http://programmingfonts.org/tagged/serif">http://programmingfonts.org/tagged/serif</a>
+找到了 Go Mono 字体：
+所有字符都统一地有 Slab Serif，
+宽度相对较窄，高宽比也合适。
+虽然我还没有动力去学习 Go 语言，
+但这个副产品让我很是满意。</p>
+<h2>延伸阅读</h2>
+<ul>
+<li>Input Font 的设计考量：<a href="http://input.fontbureau.com/info/">http://input.fontbureau.com/info/</a></li>
+<li><a href="http://programmingfonts.org/tagged/fonts">programmingfonts.org</a> 收录了很多写代码用的字体</li>
+<li>一些等宽字体渲染对比：<a href="https://app.programmingfonts.org/">https://app.programmingfonts.org/</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>除非你是为程序员设计字体的专业人士。
+不过那样的话，你懂得的肯定比本文要多得多，所以也就不用读下去了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>legible 主要指字体里的字符是否容易被人眼辨识。
+而 readable 是指文字的意思能否被人理解。
+如果你在该用 legible 的地方用了 readable，那么这种 Chinglish 就不够 readable。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+
+
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/atom.xml">Atom Feed</a></li>
+          <li><a href="/archive">All Posts</a></li>
+          <li><a href="https://github.com/5long">Github</a></li>
+          <li><a rel="me" href="https://fosstodon.org/@5long">@5long@fosstodon.org</a></li>
+        </ul>
+      </nav>
+    </footer>
+  
+
+</body>
+</html>

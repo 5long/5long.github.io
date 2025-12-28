@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="">
+  <title>Blog Title</title>
+  <subtitle>This is a longer description about your blog.</subtitle>
+  <link href="https://example.com/atom.xml" rel="self" />
+  <link href="https://example.com/" />
+  <updated>2025-12-17T00:00:00Z</updated>
+  <id>https://example.com/</id>
+  <author>
+    <name>Your Name</name>
+  </author>
+  <entry>
+    <title>A Fresh Start Always Feels Good</title>
+    <link href="https://example.com/post/fresh-start/" />
+    <updated>2025-12-17T00:00:00Z</updated>
+    <id>https://example.com/post/fresh-start/</id>
+    <content type="html">&lt;p&gt;I&#39;ve decided to abandom my old blog and start fresh for the Nth time
+that I&#39;ve lost count. It always feels good to just do so. It might
+be a loss to throw away all the old stuff but I don&#39;t care that much
+about it anyway.&lt;/p&gt;
+&lt;p&gt;And I need an excuse to start writing.&lt;/p&gt;
+&lt;p&gt;Some of the old posts might be preserved if I feel like it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>无用的知识：代码字体选择</title>
+    <link href="https://example.com/post/choose-font/" />
+    <updated>2019-01-26T00:00:00Z</updated>
+    <id>https://example.com/post/choose-font/</id>
+    <content type="html">&lt;p&gt;字体可以有效地影响整个界面的氛围，
+给人以“设计感”。
+如果你经常阅读 / 修改代码，
+不妨为代码挑选一款合适的字体。&lt;/p&gt;
+&lt;p&gt;考虑到现代的系统与软件往往会提供足够好的默认字体设置，
+不用用户再折腾。
+再加上既有的习惯并不容易改掉，
+所以本文的知识没什么用&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://example.com/post/choose-font/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;。
+而且这绝不是在自嘲。&lt;/p&gt;
+&lt;p&gt;TL;DR - 我自己在用的字体是 &lt;a href=&quot;https://blog.golang.org/go-fonts&quot;&gt;Go Mono&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;等宽字体 vs. 比例字体&lt;/h2&gt;
+&lt;p&gt;按照绝大多数软件的默认设置，
+代码要用等宽字体来展示。
+等宽字体可以做到在垂直方向上按照列数对齐。
+因为，呃，每个字符宽度相等。
+让空白符有语义的代码（例如 Python，YAML）可能必须要有这样的对齐，
+才会比较易读。&lt;/p&gt;
+&lt;p&gt;再者，
+有些&lt;a href=&quot;https://news.ycombinator.com/item?id=8674221&quot;&gt;代码风格&lt;/a&gt;会希望让跨越多行的同类语法结构在垂直方向上对齐。
+如果你需要看图演示，
+&lt;a href=&quot;https://github.com/junegunn/vim-easy-align&quot;&gt;vim-easy-align&lt;/a&gt; 这个 Vim 插件的 README 里面用 gif 图片演示了多个例子。
+我自己倒是对这种风格没什么兴趣。&lt;/p&gt;
+&lt;p&gt;垂直对齐的另一个好处是可以在字符界面绘图。
+比如现代的编程工具（包括编译器，语法检查，测试框架等）
+需要绘制这样的输出，来指出源码可能出错的位置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;error: expected type, found `}`
+ --&amp;gt; hello.rs:2:21
+  |
+2 |   println!(&amp;quot;Yaye&amp;quot;): }
+  |                     ^
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当然，等宽字体还可以用来画 ASCII art。&lt;/p&gt;
+&lt;p&gt;另有一个原因是，标点符号往往不是文字（特别是正文）的重点内容。
+比例字体里的标点符号的尺寸往往偏小。
+而在编程语言里，标点符号都在语法结构中起着重要作用，
+现代的等宽字体就会为此设计易辨识（legible，而非 readable&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://example.com/post/choose-font/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;）的符号。&lt;/p&gt;
+&lt;p&gt;不过话说回来，如果有某种专门为编程设计的比例字体，
+能解决标点符号的易读性问题，
+再放弃 ASCII art 等依赖垂直对齐的需求，
+倒也不是不可以用来展示代码。
+而且比例字体也有自己的优势，如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kerning!&lt;/li&gt;
+&lt;li&gt;为每个字符分配更合适的空间。比如粗体，斜体，大写字母都需要更多的空间。
+结合 Kerning 等功能，最终效果是视觉的美观。&lt;/li&gt;
+&lt;li&gt;连续多行的相同内容，如果其中某一行有 typo，
+有可能因为宽度不同而容易被肉眼发现。&lt;/li&gt;
+&lt;li&gt;给定固定的行宽度，比例字体可以比等宽字体写更多的字符（平均来说）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 Reddit 上的&lt;a href=&quot;https://www.reddit.com/r/programming/comments/2ntm41/why_he_vertically_aligns_his_code_and_why_you/cmgsoog/&quot;&gt;这个讨论&lt;/a&gt;里面有很多信息。
+可以肯定的是，这个世界上有人故意不用等宽字体写代码。&lt;/p&gt;
+&lt;h2&gt;衬线体 vs. 非衬线体&lt;/h2&gt;
+&lt;p&gt;当我因为开始学习 Web 前端开发而接触字体知识时，
+首先了解到的知识就是衬线非衬线字体的区别。
+衬线是否能改善字体的易辨识性，
+传统的意见认为衬线体更易辨识，
+只是这件事似乎并没有很可靠的理论基础 / 实验验证。&lt;/p&gt;
+&lt;p&gt;但是，在为代码设计的字体里，
+很多字体没有严格遵守衬线 / 非衬线的限制，
+而是为了把 &lt;code&gt;ijlI1&lt;/code&gt; 这些字符分开，
+故意把这些字符加上衬线，
+而其余字符没有衬线（很可能是为了节省成本）。
+这种 inconsistent 的设计出现在如下的流行字体：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apple 的 Menlo 和 SF Mono ——
+这两个字体先后是 macOS 的新默认代码字体。
+但我总觉得它们不如旧的 Monaco 更有个性。&lt;/li&gt;
+&lt;li&gt;Google 的一系列字体：
+Droid Sans Mono，Roboto Mono, Cousine，Noto Sans Mono。&lt;/li&gt;
+&lt;li&gt;Inconsolata&lt;/li&gt;
+&lt;li&gt;Mozilla 的 Fira Mono&lt;/li&gt;
+&lt;li&gt;Ubuntu Mono&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面提到的这些缺乏个性的字体我都不喜欢。除了 Monaco。&lt;/p&gt;
+&lt;p&gt;如果要求所有字符都加上衬线，
+这倒是容易保持风格一致。
+而且衬线等宽字体又非常地少见，
+个性十足，极少撞……撞字？&lt;/p&gt;
+&lt;h2&gt;字号&lt;/h2&gt;
+&lt;p&gt;常见的字体格式 TTF 和 OTF 都是矢量字体，
+可以按照用户指定的尺寸自由缩放。
+不用太担心字体不支持显示器的分辨率的问题。&lt;/p&gt;
+&lt;p&gt;由于低分辨率下的反锯齿渲染往往会造成笔划边缘模糊，
+有些字体为这种用例内嵌了位图（bitmap）版本。
+甚至还有没有矢量的纯位图字体。
+但位图字体的问题是：要为每种尺寸手动绘制，
+制作成本太高。
+通常只有在很小的字号上使用。&lt;/p&gt;
+&lt;p&gt;考虑到现在的显示器分辨率越发地高，
+再加上视网膜屏这个产品概念的诞生，
+让高端显示器的 DPI 更加地高，
+上述的问题已经很少见，
+位图字体也就很少纳入考量了。&lt;/p&gt;
+&lt;h2&gt;字形比例&lt;/h2&gt;
+&lt;p&gt;太胖或者太瘦的字体都不好看。
+现代字体在设计长宽比时，
+会考虑与经典字体的比例相接近 / 一致，
+这样用新字体替换旧字体时，
+更容易维持原有的排版设计。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.marksimonson.com/fonts/view/anonymous-pro&quot;&gt;Anonymous Pro&lt;/a&gt; 这个字体没能被我选中，
+就是因为它和我以往惯用的等宽字体相比，
+实在是偏胖。&lt;/p&gt;
+&lt;p&gt;一个特殊情况是，
+如果用户愿意牺牲易辨识性来换取每行能显示更多的字符，
+那么有可能会选择用细瘦的字体。
+但是对于阅读代码这一用途而言，
+牺牲易读性恐怕很难接受。&lt;/p&gt;
+&lt;h2&gt;为编程设计的连字（Font Ligature）&lt;/h2&gt;
+&lt;p&gt;这个玩意不知道是什么时候突然流行起来的。
+简单来说，可以把 &lt;code&gt;!=&lt;/code&gt; 渲染成 &lt;code&gt;≠&lt;/code&gt;。
+但这种连字符往往不是字体设计者会考虑到的，
+而是由第三方 patch 进去的。
+与原有字体的视觉风格不一定契合。&lt;/p&gt;
+&lt;p&gt;而且，如果你要修改代码，
+例如说，把 &lt;code&gt;!=&lt;/code&gt; 改成 &lt;code&gt;==&lt;/code&gt;。
+如果有 &lt;code&gt;!&lt;/code&gt; 这个字符作为 anchor，
+可以用搜索的方式快速把光标定位过去，
+然后在 Vim 里按 &lt;code&gt;r=&lt;/code&gt; 即可。
+如果用了连字，
+等于是把一个操作符原有的字符信息在视觉上隐藏了。
+给编辑代码带来困难。&lt;/p&gt;
+&lt;p&gt;所以我在选择字体时，
+不会考虑连字符这回事。
+甚至于说，有它还不如没它。&lt;/p&gt;
+&lt;h2&gt;结语&lt;/h2&gt;
+&lt;p&gt;字体设计还有许多要素，
+诸如，笔划粗细，支持的字符集等等。
+这里不再多谈。&lt;/p&gt;
+&lt;p&gt;最终我在这里：&lt;a href=&quot;http://programmingfonts.org/tagged/serif&quot;&gt;http://programmingfonts.org/tagged/serif&lt;/a&gt;
+找到了 Go Mono 字体：
+所有字符都统一地有 Slab Serif，
+宽度相对较窄，高宽比也合适。
+虽然我还没有动力去学习 Go 语言，
+但这个副产品让我很是满意。&lt;/p&gt;
+&lt;h2&gt;延伸阅读&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Input Font 的设计考量：&lt;a href=&quot;http://input.fontbureau.com/info/&quot;&gt;http://input.fontbureau.com/info/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://programmingfonts.org/tagged/fonts&quot;&gt;programmingfonts.org&lt;/a&gt; 收录了很多写代码用的字体&lt;/li&gt;
+&lt;li&gt;一些等宽字体渲染对比：&lt;a href=&quot;https://app.programmingfonts.org/&quot;&gt;https://app.programmingfonts.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr class=&quot;footnotes-sep&quot;&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;除非你是为程序员设计字体的专业人士。
+不过那样的话，你懂得的肯定比本文要多得多，所以也就不用读下去了。 &lt;a href=&quot;https://example.com/post/choose-font/#fnref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;legible 主要指字体里的字符是否容易被人眼辨识。
+而 readable 是指文字的意思能否被人理解。
+如果你在该用 legible 的地方用了 readable，那么这种 Chinglish 就不够 readable。 &lt;a href=&quot;https://example.com/post/choose-font/#fnref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
+  <entry>
+    <title>网络沟通心得</title>
+    <link href="https://example.com/post/how-i-communicate-online/" />
+    <updated>2017-10-24T00:00:00Z</updated>
+    <id>https://example.com/post/how-i-communicate-online/</id>
+    <content type="html">&lt;h2&gt;Context&lt;/h2&gt;
+&lt;p&gt;本文的目的是尝试在语言表达的层面提出方法，把说话人想表达的意思尽量完整、准确地传达给听话人，同时尽量维持说话人在线形象的体面。即使不能在争辩中获胜，也要尽量争取中立旁观者的支持。当然你也可以利用这些实践方法背后的原理来故意制造误会，愤怒与混乱。&lt;/p&gt;
+&lt;p&gt;下面所述的沟通技巧，适用于网络上的公共交流场合。例如微博，公开内容（视频，博客）的评论，论坛，聊天室。沟通对象默认是网络上的陌生人，无论是实名帐号还是半匿名。至于其他的沟通场合，也可以自行将原理通用的技巧搬运过去使用。&lt;/p&gt;
+&lt;h2&gt;理解主题&lt;/h2&gt;
+&lt;p&gt;想要参与一个话题之前，最好花点时间去观察了解对话的各方，了解当前讨论的话题，然后再考虑要不要深入沟通。如果对主题没有什么兴趣，最好不要上去故意跑题。&lt;/p&gt;
+&lt;p&gt;有些时候看到对方提出莫名其妙的问题，可能只是为了发泄，没必要太认真地接下去。前几天看到有个人提问：为在某个 Linux 系统里装一个依赖 Java 9 的软件，该怎么从系统旧有的 Java 8 升级。我直接给出了一个很 trivial 的解决方案。但他还多问了一句“java 9 很好吗？”很明显这个人并不是 Java 程序员，也不在乎不同 Java 版本之间有什么区别，他可能只是觉得折腾了一通很不值得吧。这种时候我认为正确的做法就是不要去回答 Java 9 到底是不是很好（其实我也回答不出来）。&lt;/p&gt;
+&lt;h2&gt;内容完整性&lt;/h2&gt;
+&lt;p&gt;如果是在聊天室环境，习惯上可能会经常按发送按钮，把一条很长的信息拆分成若干条发送。这会给对方制造提前插话的机会。而且也容易让对方意外地忽略掉其中的一两条。所以说还是尽量地把消息一次性写完整得好。&lt;/p&gt;
+&lt;p&gt;一个类似的情况是，如果在网络论坛上发帖，而且论坛还支持编辑功能，那么尽量使用编辑功能来补充信息，而不是拆成很多条回帖去发。像百度贴吧这种又没有编辑功能，又鼓励多发帖混积分的社区，我几乎是不会去的。&lt;/p&gt;
+&lt;p&gt;这样说来，对每条信息加上严重字数限制的网络社区也是不适合严肃交流的。Twitter 正在尝试将消息长度增加到 280 个字符，但我对此还是不看好。&lt;/p&gt;
+&lt;h2&gt;标点符号&lt;/h2&gt;
+&lt;p&gt;以前我自己刚开始上网的时候，智能 ABC 这个输入法很是流行。这个输入法敲得最多的键应该是空格键：一次空格显示候选，两次空格选中首个候选。如果习惯了这种频繁敲击空格的节奏，打出的句子里就会多出很多不必要的空格，而且还会觉得“既然我已经打出这么多空格就不用再写标点符号了”，具体该怎么断句让对方自己揣测。&lt;/p&gt;
+&lt;p&gt;随着新的拼音输入法和智能手机的流行，现在这种情况已经不多见了。但偶尔还是能见到这种大量空格的消息。总之正确地使用标点符号，确实可以降低对方理解的难度。&lt;/p&gt;
+&lt;p&gt;此外我个人对于在严肃话题中大量使用感叹号的人没有好感，除非你只是为了咆哮一下。&lt;/p&gt;
+&lt;h2&gt;语调与语气&lt;/h2&gt;
+&lt;p&gt;打字是没有语音语调的，但对方阅读时可能会&lt;a href=&quot;https://www.youtube.com/watch?v=naleynXS7yo&quot;&gt;自行脑补出一种语调&lt;/a&gt;来。如果你写出的文字要加上正确的语调才能准确地表达意思，那么最好改写成无法被语调影响的表述。&lt;/p&gt;
+&lt;p&gt;与语调一样会产生误解的是语气词。经验中最容易制造误解的语气词应该是“呀”：用“呀”结尾的句子总给我产生一种“你怎么连这个都不知道”的说话人态度高高在上的错觉。虽然完全没有语调和语气词的句子读起来了无生气，但至少可以避免别人生气。&lt;/p&gt;
+&lt;h2&gt;方言&lt;/h2&gt;
+&lt;p&gt;我自己的家乡方言较为接近普通话，平时不怎么注意这个问题。但我在读大学的时候，老师讲课时不时地就会来一句当地方言。即使汉语很多方言的书面语不像口语之间差异那么明显，但方言还是会有自己独特的词汇与句式风格。主动少用方言可以避免误解。&lt;/p&gt;
+&lt;p&gt;如果由方言引入了频繁使用的语气词，听话人对于对话气氛的误解就会急剧上升。&lt;/p&gt;
+&lt;h2&gt;理解错别字&lt;/h2&gt;
+&lt;p&gt;出现打错字的情况很正常，在手机上因为虚拟键盘的按键比物理按键小，而且虚拟键盘只是屏幕上的触摸范围，不像物理按键那样触感区分明显。手机打字就更容易出错。默认对方使用拼音输入法（五笔太难学，这个就算了）的时候，尝试去理解可能出现的错别字，不要在这上面纠缠不清。&lt;/p&gt;
+&lt;p&gt;当然，反过来说，说话人应当尽量避免打错别字。如果发现已经发出去的消息有错别字，最好使用编辑功能 / 追加消息的说明来处理错别字。&lt;/p&gt;
+&lt;h2&gt;表情图与颜文字&lt;/h2&gt;
+&lt;p&gt;如果你不确定要不要在网上公共沟通的场合用这些内容，那么就不要用。我见过的例子：有个人在 IRC 里因为 Linux 桌面环境里某些程序出错了提问，某个尝试回答问题的人回复的每三分之二的消息都带有这个颜文字：´_&amp;gt;`。看上去像是在比剪刀手。如果我面前的某个人在跟我探讨技术问题，还要时不时地比个剪刀手，我肯定会抓着他的手指把他自己的眼珠子挖出来。&lt;/p&gt;
+&lt;h2&gt;意义模糊的流行语&lt;/h2&gt;
+&lt;p&gt;说话人往往觉得自己把问题说清楚了，但听话的人并不是说话人的克隆人。说话人自己的生活阅历，所熟悉的梗，对一词多意的掌握与使用习惯与听话人不同，就会造成误解。我在 B 站做直播的那一阵子，年轻的观众群体总在给我普及各种流行语。然而到现在我也不确定“清真”这个词在网络流行语里到底是指原教旨主义还是恐怖主义，反正肯定不是不含猪肉的意思。&lt;/p&gt;
+&lt;h2&gt;反问句&lt;/h2&gt;
+&lt;p&gt;不要用反问句。小学语文肯定教过怎样把反问句改写成陈述句，大家都会的。用反问句只会让对话气氛紧张起来。让人觉得说话人对于眼前的对话已经不耐烦了。&lt;/p&gt;
+&lt;p&gt;写了这么多我也有些不耐烦了，那就到这里吧。&lt;/p&gt;
+&lt;h2&gt;延伸阅读&lt;/h2&gt;
+&lt;p&gt;本文所述的沟通技巧只关注了语言表达的方面，而且没有详述技巧背后的价值与准则。这里我推荐两个更加完整详尽的网络社区沟通准则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Freenode Channel Guidelines: &lt;a href=&quot;http://freenode.net/changuide&quot;&gt;http://freenode.net/changuide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reddiquette: &lt;a href=&quot;https://www.reddit.com/wiki/reddiquette&quot;&gt;https://www.reddit.com/wiki/reddiquette&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>一个 Perl 程序员职业生涯的中年危机</title>
+    <link href="https://example.com/post/mid-career-crisis-of-perl-programmer/" />
+    <updated>2017-09-07T00:00:00Z</updated>
+    <id>https://example.com/post/mid-career-crisis-of-perl-programmer/</id>
+    <content type="html">&lt;p&gt;意外地读到这篇文章，正在找工作的自己略有感触但不知从何说起。不过至少我想要把它翻译出来，给更多的人看到。&lt;/p&gt;
+&lt;p&gt;原文发布于 2014 年 2 月份发布在《Modern Perl》一书的配套网站上。
+链接是：&lt;a href=&quot;http://www.modernperlbooks.com/mt/2014/02/the-mid-career-crisis-of-the-perl-programmer.html&quot;&gt;http://www.modernperlbooks.com/mt/2014/02/the-mid-career-crisis-of-the-perl-programmer.html&lt;/a&gt;。作者 chromatic。&lt;/p&gt;
+&lt;p&gt;原文与本文均以 &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;CC-BY-NC-SA 3.0&lt;/a&gt; 许可发布。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;HN&lt;/a&gt; 网友总结: 建个面向土拨鼠的匿名社交网，卖给硅谷大公司挂广告或者挖掘用户数据，这就是一〇年代的创新。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://reddit.com/r/programming&quot;&gt;proggit&lt;/a&gt; 网友总结: 与其熟练掌握一种编程语言，并精通解决问题的思维方式，不如花时间用 &lt;s&gt;Haskell&lt;/s&gt; &lt;s&gt;Rails&lt;/s&gt; &lt;s&gt;Erlang&lt;/s&gt; &lt;s&gt;Scala&lt;/s&gt; &lt;s&gt;Rails&lt;/s&gt; &lt;s&gt;Python&lt;/s&gt; &lt;s&gt;Node&lt;/s&gt; &lt;s&gt;Clojure&lt;/s&gt; Julia 语言写个 CRUD 软件，模板系统，依赖注入框架，还有 ORM。&lt;/p&gt;
+&lt;h2&gt;起点&lt;/h2&gt;
+&lt;p&gt;1998 年，我放弃了自己的音乐人职业生涯。说是“职业生涯”有点夸大了。虽然我做音乐的时候赚过钱，但还没做到能自称专业的程度，更枉谈交得起房租还要果腹。于是我在惠普彩色激光打印机部门给自己谈到了一份工作。&lt;/p&gt;
+&lt;p&gt;我在打印机团队里写代码，就是因为自己想写。我拿 AWT （当时 Swing 刚出来，在 Linux 上好一阵子都不能用）给客服写了个小软件，专门做客户问题详情记录。后来网络团队想要在网站发新技术文章的时候给客户自动发邮件，也找我写程序。当时只写了十行的 Shell 脚本（版本是 HP-UX 9.几自带的那个，记不清了）。后来我想改写成 Java 版，但代码要多出几个数量级，我也就没能坚持写完。&lt;/p&gt;
+&lt;p&gt;后来我发现自己还是喜欢折腾 HP-UX 跟桌子底下那台 Linux 服务器。相比之下，研究打印机卡纸，或者 PostScript 驱动渲染出错，我就没那么上心。于是我转职去当了个 SA。（想转到开发方向的工作得搬去别的州，而且人家要求得有 CS 学位，但我只有音乐学位。）&lt;/p&gt;
+&lt;p&gt;新工作的前三个月，我一边要响应紧急故障，一边要把手上的问题尽量自动化解决掉。之后我就开始闲了下来。这个时候我就看上了互联网。当时 mod_perl 刚出来，Java applets 不怎么好用。我就开始学 Perl。&lt;/p&gt;
+&lt;p&gt;一开始我自己写了几个免费小软件，后来这些项目都没什么进展。当时人人都写过自己的模板系统。但我找到了 &lt;a href=&quot;http://everything2.com/&quot;&gt;Everything 2&lt;/a&gt; 的文本预处理模块源码，就给这个项目写了点代码。再后来（Carly Fiorina 为了省钱，把 SA 都给裁了），我去了一家互联网公司上班，这家公司做了 &lt;a href=&quot;http://perlmonks.org/&quot;&gt;Perl Monks&lt;/a&gt;，很快就火了。&lt;/p&gt;
+&lt;p&gt;后来我写了本书。书的封面很帅，不过估计你也没机会看。（那本书是英语世界里第一本谈博客的书，但不知道怎么搞的，书的标题印错了。这时候第一批互联网热潮只剩下尾声。在那个年代，只要找好角度去吹，随便一个点子都能吹成金点子。就差把交管局也说成好东西了。）&lt;/p&gt;
+&lt;p&gt;写书这件事，一半要疯狂钻研，另一半是繁琐劳动。为了说服自己“我的所作所为对这个残酷冷漠的宇宙还是有积极意义的”，我应 Michael Schwern 所求，将 &lt;a href=&quot;http://search.cpan.org/perldoc?Test::Simple&quot;&gt;Test::Simple&lt;/a&gt; 和 &lt;a href=&quot;http://search.cpan.org/perldoc?Test::More&quot;&gt;Test::More&lt;/a&gt; 的内部架构统一了，这就是后来的 &lt;a href=&quot;http://search.cpan.org/perldoc?Test::Builder&quot;&gt;Test::Builder&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这个项目当时在 perl-qa 邮件列表的眼里，可以说是个革命。对整个 Perl 社区来说也是。但现在回头再看它，你会觉得“这不明摆的吗？”，“这也算革命？”。因为它貌似于尽人皆知的常识，比如“多喝水”，“吸烟有害健康”这种。&lt;/p&gt;
+&lt;p&gt;之所以说这是革命，是因为在它的基础上，雨后春笋般地出现了上千个测试模块（为解决各种不同的测试问题），并且为这些模块提供了共同的生长土壤（测试模块间可以协同工作，但模块作者不必为此劳神）。这是 API 设计中的一个重要原则：把困难、繁琐、蹊跷的部分自己处理好，让别人不会重复踩坑，但又不限制调用方的自由使用。如果你想到了分层设计，没错就是那个意思。&lt;/p&gt;
+&lt;p&gt;藉由我在开源 Perl 项目中的贡献，我去做了一阵子的软件咨询工作。(在网站上靠回答问题出点名，确实能让你在社区里建立名望与人脉关系。给知名项目提交代码也很有用)&lt;/p&gt;
+&lt;p&gt;后来我的事业就受挫了，我改行去做了一段时间的编辑，关注点是开源软件与技术。&lt;/p&gt;
+&lt;h2&gt;业余参与开源&lt;/h2&gt;
+&lt;p&gt;我觉得不让自己的编程技能生疏还是很重要的。于是我投入开源项目（包括开发和写书）的时间比以往更多了。&lt;a href=&quot;http://www.perlbooks.com/mt/2013/02/goodnight-parrot.html&quot;&gt;在 Parrot 项目上投入了不少精力&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;（2007 年起，在各种场合，总有 Parrot / Rakudo / Perl 6 开发者跟我说“确实，这个项目拖得太久了，而且大家都没拿到好处。但是再等 18 个月到发布，出书 / 培训 / 咨询的市场就能做起来，到时候我们就好过啦！”）&lt;/p&gt;
+&lt;p&gt;那段日子是 Perl 程序员的困难时期。Perl 助推了 Ruby / &lt;a href=&quot;http://oreilly.com/ruby/archive/rails.html&quot;&gt;Rails&lt;/a&gt;像滚雪球一样壮大（距今已经满九年了），Perl 自己卡在 5.8 版本，三年没有进步。人们仍然把希望寄托在 Perl 6 身上，希望这个语言能时来运转。另一方面，测试文化已经像看不见的有益肠道种群（饭后一定要染上的那种）一样感染了语言核心与 CPAN。文化有土壤，有根基，也见了成长，但仍需要时间积累。&lt;/p&gt;
+&lt;p&gt;Pugs 项目也对 Perl 有点助推作用，但 Pugs 已经成为历史趣闻许久了。&lt;/p&gt;
+&lt;h2&gt;悄然复兴的 Perl&lt;/h2&gt;
+&lt;p&gt;虽然全世界都已经不再指望 Perl 能出新版，Perl 5 还是出了几个新版本。再加上 CPAN 的存在，我依然坚持 Perl。还好在这件事上我并不孤独，2014 年 Perl 能新出大项目，全靠 &lt;a href=&quot;http://moose.perl.org/&quot;&gt;Moose&lt;/a&gt; 项目的助推。当然我不能否认 &lt;a href=&quot;http://search.cpan.org/perldoc?DBIx::Class&quot;&gt;DBIx::Class&lt;/a&gt;，&lt;a href=&quot;http://mojolicio.us/&quot;&gt;Mojolicious&lt;/a&gt;，&lt;a href=&quot;http://catalystframework.org/&quot;&gt;Catalyst&lt;/a&gt; 等项目也有功劳，不得不提。但 Moose 带来的革命是大张旗鼓地推翻既有范式的革命。如果说 Moose 是古巴革命的卡斯特罗，其他 CPAN 上的项目就像切・格瓦拉一样抢了功名。除非你觉得给垄断企业送钱把你的偶像照片印T恤上就算是文化叛逆了。（这个类比跑偏了，它自己骑摩托游南美去了。抱歉。）&lt;/p&gt;
+&lt;p&gt;这次革命需要师出有名。&lt;/p&gt;
+&lt;h2&gt;现代 Perl&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742?tag=mp1234-20&quot;&gt;JavaScript 也迎来了复兴&lt;/a&gt;：以前它是“没人喜欢但又不能不用的语言”，复兴之后它成了“睁只眼闭只眼无视语言缺陷再加上严守恪守戒律就能写出不那么太烂的代码的语言”。（如果这个辩解让你觉得似曾相识又心里一酸，别忘了&lt;em&gt;JavaScript 是你在 Web 客户端的唯一选择&lt;/em&gt;，Perl 就没这个限制。）&lt;/p&gt;
+&lt;p&gt;我觉得这是个机会，我应该离开这个越发压抑的企业技术出版界，自己去办一家&lt;a href=&quot;http://onyxneon.com/&quot;&gt;技术出版社&lt;/a&gt;。跟企业级出版社不同的是，我们第一本书从开始做到开印也没花到上万美元。虽然写出一本&lt;a href=&quot;http://www.amazon.com/gp/product/0977920178?ie=UTF8&amp;amp;tag=mp1234-20&quot;&gt;《Modern Perl》&lt;/a&gt; 这样能赚钱的书总归是好事，但写书与出版这件事最好还是看作“一种爱好，能给你赚点小钱，够你时不时下顿馆子”，而不是“这辈子再也不用工作啦。除非你硬要把躺在金山上睡觉说成是工作”。&lt;/p&gt;
+&lt;p&gt;出版业也是个吃爆款的行业。但想要出一本畅销书就像是半随机遭雷劈，你得在正确的时间出现在正确的地点。你还得学德州扑克牌手那样，懂得什么时候该全押上，更要知道什么时候该抽身。技术出版市场做成现在这么烂，就是因为很多人不懂这一点。Ruby on Rails 是 2005 - 2006 年最火的技术话题，火爆程度可比当年的 JSP。它的出版市场在 2007 年就已经到达顶峰，然而时至今日，会说话的人偶，餐桌上的竹蛏，快递新鲜蔬菜的无人机已经司空见惯，出版商还在大量围绕 Rails 出书。一如它们在 1998 - 2001 年间为 Perl 疯狂出书。尽管当时一键下单这个泡沫已经濒临破灭，无数人因此丢了工作，或者放在过热股市里的纸钱就没了。（你从权力幻想小说邪教里招个青春期来经营世界最大经济体，就必然是这个下场。当然了，我把话说成这样，是因为我只有音乐学位，没有经济学学位，再就是还有事后诸葛亮的成分。）&lt;/p&gt;
+&lt;p&gt;如果你要问我为什么没去写一本《Modern Perl Testing》的书，那么这就是原因之一。在越发难得的周末，我宁愿干点放松的事（陪陪家人和朋友），更健康的事（烹饪，锻炼），或者能赚外快的事（投资），也不想劝自己写书。也许以后，我对 &lt;a href=&quot;http://rust-lang.org/&quot;&gt;Rust 语言&lt;/a&gt;的有所为，有所不为能感兴趣的话，&lt;em&gt;兴许&lt;/em&gt;我会写一本《Rust 编程》的书。这么一说，我有点后悔十年前没能给 Parrot 写这么一本书。&lt;/p&gt;
+&lt;p&gt;即便如此，《Modern Perl》这本书的写成，出版，以及在网上的免费发布，终究是件好事。也许同样花那么多时间，写这本书赚到的钱还不如在星巴克给人兑奶昔赚得多。但这本书的 PDF 的免费发布，与书的配套网站上的内容所制造的社会公益，是我职业生涯中收获的最高成就感。（也许从代码的角度来说，&lt;a href=&quot;http://search.cpan.org/perldoc?Test::Builder&quot;&gt;Test::Builder&lt;/a&gt; 项目造成的影响更深远。但是一旦我开启这个思考方式，再想起我搞过的那些个当时看上去挺有影响但其实没什么实质发展的大项目，就打心眼觉得（此处插入超长的德语哲学概念组合名词）。）&lt;/p&gt;
+&lt;p&gt;《Modern Perl》这本书，往小了说，它给 2010 年代顶尖 Perl 程序员所实践的代码风格起了个具体的名字。往大了说，它帮现存的 Perl 程序员（和新学 Perl 的人，如果还有的话）对 Perl 做到取其精华，去其糟粕。&lt;/p&gt;
+&lt;h2&gt;某现代 Perl 咨询师的金手铐&lt;/h2&gt;
+&lt;p&gt;后来我稍微尝试了一下自己开个反正不是出版界的公司（对了，你要是能把这篇&lt;a href=&quot;https://trendshare.org/how-to-invest&quot;&gt;写给个人投资者的价值投资指南&lt;/a&gt;或者&lt;a href=&quot;https://blenderrecipereviews.com/recipes/smoothies/how-to-make-a-smoothie&quot;&gt;怎样做一杯果昔&lt;/a&gt;的链接给推一推，那就多谢了），才发现从零开始办公司实在是太难，太难。&lt;/p&gt;
+&lt;p&gt;我觉得，很多小咨询公司固守着咨询业务，而不去把自己的创意做成产品，其中一个原因就在于做实业难。咨询的钱太好赚，下本钱去做前景不明的产品太难。而且这事我也不是第一次经历。如果我的第一份工作能在第一轮互联网泡沫破灭时，坚持把自己的产品做出来，就能占领一块肥厚的垂直市场。然而不幸的是，等做咨询赚的钱都花完了，也没做出一个验证概念的原型来。手上没有原型，连预售也搞不起来。（当然，投资人还要求说要用 Java 统一重写 Perl 的后端和 Python/Wx 的客户端，虽然那一年是 2002。然后还说程序要跑能在小商户的零售终端上,虽然那都是 2002 年的硬件水平。）&lt;/p&gt;
+&lt;p&gt;做咨询行情好的时候，来钱确实快得诱人。咨询师比普通程序员的时薪要高，是因为你得自行承担开销：合同需要自己去谈，而且还不一定谈得成，没合同的时候只能闲着，还没有带薪休假，还没有免费福利。&lt;/p&gt;
+&lt;p&gt;如果你能找到个优质客户，你肯定得拿人家当教皇、女王、活佛三者叠加的标准供起来。像这种说话算话，按时给钱，又不计较合同细节的客户真是千金不换。&lt;/p&gt;
+&lt;p&gt;假设说，你要连续八九个月勒紧裤腰带，然后运气好一点，又接了个两倍于此的单子。这种饥一顿饱一顿的经济周期，有些人能接受，有些人就不一定受得了。（对我来说，收紧预算在公司制度上还好办，但心理上的起伏就不好受。）做咨询能赶上个好合同，不仅钱多，自由度也高。但合同太烂或太少，日子就难过。相比之下，按月拿薪水能带来太多的安全感，再看别的赚钱机会都很难保持客观心态。&lt;/p&gt;
+&lt;h2&gt;找个写 Perl 的工作吧&lt;/h2&gt;
+&lt;p&gt;我是不是个 Perl 程序员？&lt;/p&gt;
+&lt;p&gt;我很幸运 16 年来能在多个项目、工作、领域里深层运用 Perl。我也做过写 Python，SQL，shell，Ruby，C，C++，JavaScript，assembly，Java，SQL，PL/pgSQL，Visual Basic，PHP，LaTeX 的工作。而且应该还有一两个语言是我用过但想不起来的。&lt;/p&gt;
+&lt;p&gt;作为一个有志于职业成长，但除了朝九晚五之外在生理上写不下去代码的程序员，我对 Perl 之外的技术也有所涉猎。虽然没达到我对 Perl 这么专精的水平，但跟人聊天的时候，还不至于完全说不上话那么尴尬。（有一次 &lt;a href=&quot;https://en.wikipedia.org/wiki/Charles_H._Moore&quot;&gt;Chuck Moore&lt;/a&gt; 跟我聊起自己写一个操作系统的重要意义，那次对话被我录成 MP3 了。）&lt;/p&gt;
+&lt;p&gt;然而在我的简历上，&lt;em&gt;Perl&lt;/em&gt; 这个技术名词反复出现。&lt;/p&gt;
+&lt;p&gt;我确实喜欢这门语言。我习惯了它的缺陷（尽管在这个网站上的几百篇文章里，你肯定能找出那么几篇写出了我对某些缺陷有多讨厌）也懂得怎样发挥它的长处。我喜欢它的社区（像 Tim
+Bunce，Karen Etheridge，Rik Signes，Andreas König，Jess
+Robinson，Tatsuhiko Miyagawa 这样的人，真心都是无可替代的）。我在写 Perl 时的效率太高，去写别的语言短时间内根本达不到同等水平。毕竟这是十六年积累下来的经验。毕竟这是两万小时的练习成果。&lt;/p&gt;
+&lt;h2&gt;那你学会&lt;em&gt;编程&lt;/em&gt;了没？&lt;/h2&gt;
+&lt;p&gt;我能找到推荐人对我的编程水平给予高度评价。我帮人解决过问题，我也教过别人解决问题的思维方式，你说我学没学会。&lt;/p&gt;
+&lt;p&gt;（当然你也能找到有些人说我说话尖酸刻薄情绪化。不论如何，既然你都读到这了，我也不用假装自己有多完美。）&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;这&lt;/em&gt;才是评价一个程序员的重点，但这不是一纸简历就能体现出来的。我在 GitHub 或 CPAN 上的代码只占我工作成果的一小部分，光看这些代码也回答不了这个根本问题。你在代码里肯定也看不出我犯过的错误（假如我确实犯过的话）。代码也不会显示我在提交之前被 git squash 抹去的纠结过程（也许纠结过，也许没有）。假如有 1400 来行代码是我一个下午一口气堆出来，再修改过一次就编译成功，然后这段代码运行顺利，也不需要再改，我也再就没去动过。这样的故事你从代码里也看不出来。&lt;/p&gt;
+&lt;p&gt;如果你让我在白板上写个排序算法，这最多只能考察到“这个人到底有没有&lt;em&gt;一丁点&lt;/em&gt;的编程知识”的程度，再多的你也考不出来。然而在程序员面试时，这依然是个常见环节。&lt;/p&gt;
+&lt;!-- 然而，现在的程序员面试中仍然有“在白板上写排序算法”这么个事。我不知道这种面试环节到底能考察出什么来。估计也就停留在考察“这个人到底有没有*一丁点*的编程知识？”的程度。 --&gt;
+&lt;p&gt;光看一张简历，你根本看不出我是那种不满足于按照既有计划来堆砌代码的人，即使这个计划仅仅是架构师制定的、项目经理透露给销售主管的、销售主管要求企业销售代表承诺给客户的新版必然会有的东西。（这种工作环境能窝囊死人）从简历上一两页的文字，你根本看不出我为了写出最完美的医疗保险帐务代码能付出多少热情，看不出这份热情能否转化成最终的用户体验，哪怕用户根本感受不到我们在代码上线之前就剔除了多少 bug 和设计缺陷。&lt;/p&gt;
+&lt;p&gt;虽然我的简历上写着 &lt;em&gt;Perl&lt;/em&gt;，&lt;em&gt;Ruby&lt;/em&gt;，&lt;em&gt;PostgreSQL&lt;/em&gt; 这些关键字，但你读过之后还是不会了解我的这些特质。甚至读代码也读不出。虽然这是你招人时要冒的风险，但相比之下，这个问题的分量不亚于“你觉得自己能融入我们的团队吗？”，更不亚于“看你作为一个专业程序员，对开发工具与自动化还挺重视的，也有挺多年的 Vim 使用经验。那你能在白板上手写代码吗？”&lt;/p&gt;
+&lt;h2&gt;但哪有写 &lt;em&gt;Perl&lt;/em&gt; 的工作？&lt;/h2&gt;
+&lt;p&gt;我不觉得自己是个独一无二的存在。程序员并不是轻易可以替换的，但世界上也没那么多编程问题需要找屈指可数的顶尖专家来解决。（虽然我修的学位是音乐方向，而不是斯坦福、伯克利、MIT、CMU 的“计算机科学”，导致我再无缘涉足计算机视觉，AI 研究，编译器设计领域。然而就因为这个音乐学位的事，Google 的面试官就觉得我能在几周间回答乒乓球问题，还要设计什么电话本排序算法，都应该心存感激。就为了能有一份在数据中心里的工作，给他们的广告服务器端茶倒水而已。&lt;/p&gt;
+&lt;p&gt;很明显，如果我还想继续写代码，我更愿意使用自己熟悉和喜欢的语言。我相信&lt;a href=&quot;https://outspeaking.com/words-of-technology/the-lemon-market-of-programming-language-adoption.html&quot;&gt;盲目追逐流行技术对公司和程序员都有害处&lt;/a&gt;，但这种趋势一时也改不了。&lt;/p&gt;
+&lt;p&gt;照我看来，有这么几种方法能让你找到写 Perl 的工作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自己创办公司，自己创造职位&lt;/li&gt;
+&lt;li&gt;与不在乎技术选型的客户合作，自己创造职位&lt;/li&gt;
+&lt;li&gt;在现有的工作中逐渐引入 Perl，直到 Perl 的地位不好取代，这样自己创造职位&lt;/li&gt;
+&lt;li&gt;找到现存的还在用 Perl 的公司（等于“搬到阿姆斯特丹”，或者“维护 1997 年传下来的代码”，或者“撞大运”）&lt;/li&gt;
+&lt;li&gt;用 Perl 造出一个惊为天人的东西，让人不得不用。比如说 mod_perl，或者 Movable Type。cPanel 和 Catalyst 也算得上吧。&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大概十四、五年前，甚至到十年前，我可能还指责过这个残酷冷漠的技术圈的赶时髦，重视宣传造势而非技术优越性，是多么不公平。但我自己也不是没追过时髦。我在考虑自己职业生涯的转折点时，（当时我问自己“是不是该去考个 CS 学位？”，“考个财经学位，再办个行业法务咨询公司，是不是来钱更快？” —— &lt;em&gt;这个真不是我瞎编的&lt;/em&gt;，几年前我甚至还想去盘一家面包房，但 &lt;a href=&quot;https://twitter.com/rbuels&quot;&gt;Robert Buels&lt;/a&gt; 几分钟就把我劝住了。）想到了下面这个质问技术流行趋势的大问题：&lt;/p&gt;
+&lt;h2&gt;什么技术能免于过气&lt;/h2&gt;
+&lt;p&gt;除了 COBOL，再除了 MUMPS，无一幸免。&lt;/p&gt;
+&lt;p&gt;我愿意这辈子一直写 COBOL 或者 MUMPS 吗？或者就写一下午呢？不要。&lt;/p&gt;
+&lt;p&gt;这么说吧。我是个一般意义上的程序员。我能够解决问题。我带过团队，也当过螺丝钉。我写过文档，写过测试。有时候我删掉的代码比新写的都多，但这种时候我更开心。有时我为客户解决问题的方案是&lt;em&gt;不&lt;/em&gt;写代码。有时我在调试分析报告里折腾好几天，最后给数据库一个列加上缓存就万事大吉。但只要最终找到了解决方案，之前为了钻研的努力就都值了。&lt;/p&gt;
+&lt;p&gt;我在技术选型上确实有个人偏好。我也有积累下来的工作经验。你想招一名程序员，你就得承认他/她的偏好，经验，乃至偏见。&lt;/p&gt;
+&lt;p&gt;也许是我太挑剔。也许事业进入中年危机，并承认“在网上跟人吵哪种语法好太浪费时间了，我还不如去遛个狗，陪上小学的侄子玩玩，或者跟朋友们开暖房趴去”是个自然过程。也许变得犬儒也未尝不可，并且认为“我毕竟是专业人士，哪怕我对管理临床研究记录没半点兴趣，只要你给钱给够了，我就能把自己难得的判断力与知识、经验贡献出来，为你高效可靠地解决问题。”但我肯定不会再在下班之后还惦记着代码。&lt;/p&gt;
+&lt;p&gt;要不，我当年&lt;em&gt;就该&lt;/em&gt;把那家面包房盘下来。虽说那么一来，我就得招几个靠谱的人干活，分一大块利润给他们开工资，还得每天早上四点起床，还得应付卫生督查员，还得关注土地用途分区，还得紧盯奶制品市场价……&lt;/p&gt;
+&lt;p&gt;……但我至少不用应付着风投一边给我少开工资，一边用轮轮被稀释的受限股份提醒着我有百分之一的可能会被人才收购，然而被收购之后到手的钱比全程拿标准薪水也高不到哪去。也不用应付陪客户做异想天开项目，但人家一小时只愿意给 $20。这还是因为找我能用英语沟通，要不然人家就找阿尔巴尼亚的高中生去了，那边一小时只要 $8。也不用应付那种 HR：他们一看简历上有 “Perl” 这个关键字，就默认我肯定还是 1998 年的那个入门级 SA，或者是从 1999 年时间穿越过来的。今年电脑都联因特网儿了知道不啊，呵呵。JS 都成正经语言了，要不你先来看看我们春季新品发布会吧？&lt;/p&gt;
+&lt;h2&gt;根本问题&lt;/h2&gt;
+&lt;p&gt;如果你因为生活上要担着责任，没法变卖全部家当，去泰国或者伯利兹城的海滩上住上一年，那么对于已经步入中年的事业，你自己是怎么看的？你是如何维持编程的新鲜感的？你是如何把自己标榜成有能力&lt;em&gt;解决问题&lt;/em&gt;的人，而不是仅仅把想法翻译成时髦编程语言的人？抑或你已经彻底告别了编程？&lt;/p&gt;
+&lt;p&gt;这些问题我也给不出答案。但至少，十六年的工作经验让我终于有能力问得出来。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>谈建设性批评</title>
+    <link href="https://example.com/post/on-constructive-criticism/" />
+    <updated>2017-08-15T00:00:00Z</updated>
+    <id>https://example.com/post/on-constructive-criticism/</id>
+    <content type="html">&lt;p&gt;“建设性批评”这个词想必大家多少听说过。这里我只谈专业工作环境下的批评。如果你所处的交流环境是更加感性的（比如处理家庭纠纷），那么你可能需要配合摆布情感的把戏来提出批评。&lt;/p&gt;
+&lt;p&gt;与建设性批评共同出现的一个词语是“正能量”。目前按照我的经验，专业协作环境下的“正能量”说法基本等同于“我不想听任何反对意见。”我的母亲在痴迷国学的过程中，她学到的一个原理相同的重量级语言武器是来自佛教的“转念”。转念的本意我没有花时间去了解，但从我自己被这一武器打击的感受来说，大概就是“转变你的观念，一切都会变好”的意思。如果意见不同的双方同时使用这一武器，坚持认为同意自己观点的才是“正能量”，都希望对方“转念”，我很好奇对话会有什么样的发展。&lt;/p&gt;
+&lt;p&gt;建设性批评往往主张对事不对人的讨论，不应使用羞辱性用语。羞辱性用语确实不是什么好事。哪怕是被批评的行为再如何愚蠢，批评人动用羞辱用语，很可能会陷入 &lt;a href=&quot;https://yourlogicalfallacyis.com/ad-hominem&quot;&gt;ad hominem&lt;/a&gt; 逻辑谬误。而且还会使被批评人进入抵御心态，导致对话难以进展下去。&lt;/p&gt;
+&lt;p&gt;建设性批评的决定性特点是：提出批评的同时，批评人需要给出可执行的改进建议。这里也是我想探讨的重点。&lt;/p&gt;
+&lt;p&gt;被批评人所被批评的行为，往往是由被批评人的工作职责产生的。如果批评人与被批评人的工作职责不同，那么批评人未必具有足够的专业知识来替被批评人做出决策。这种情形下，建设性批评成为责任人逃避责任的借口。而且，过分地鼓励“批评同时要给出改进办法”，弄不好会跳进 XY Problem 的陷阱。把问题先定义清楚，再开始去寻求解决方案也不迟。&lt;/p&gt;
+&lt;p&gt;假设被批评人能够在面对批评时，尝试与批评人交换意见，说理辩论，这其实是最理想的状态。然而，批评人未必总是能提出改进建议，设立建设性批评的标准其实是在不必要地增加批评的门槛，并且起到关停对话的作用。考虑如下的场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;被批评人表面上承认自己被说服，但不愿意承担责任去寻求更好的解决方案，而是反问评论人“那么你有什么好的建议吗？”&lt;/li&gt;
+&lt;li&gt;被批评人没有被说服，但出于某种原因，他只想尽快地按照原方案执行下去，不想展开讨论。那么就可以用这种说法来关停对话。&lt;/li&gt;
+&lt;li&gt;有时被批评的行为的方向就是错误的（比如在应用开发程序员的面试过程中要求加入笔试考卷，题目当然要包括排序算法）。建设性批评的思维方式默认了这个行为的方向是正确的，只需要批评人在此基础上提供改进意见（比如希望批评人“出一套自己满意的试题”），而不接受废止原方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上几个场景，批评人的意见中的价值都被忽略了。而且是以貌似文明、友善，实则无知且顽固的方式被忽略的。&lt;/p&gt;
+&lt;p&gt;几年前我就对这个话题如鲠在喉，今天我终于用文字写明了。&lt;/p&gt;
+</content>
+  </entry>
+</feed>
